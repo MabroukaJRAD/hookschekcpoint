@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.movieStyle{
+width: 100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap: wrap;
+}
+.addMovie{
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+}
+section{
+  padding: 30px;
+}
+.filterbox {
+  display: block;
+  width: 80%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background: none;
+  background-color: #eee;
+  border-radius: 8px;
+  color: #53565a;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.4s ease-out;
+  margin: 0 auto;
+}
+.filterbox ::placeholder {
+  text-align: center;
+}
+
+.filterbox:focus {
+  box-shadow: 0px 0px 100px 3px #4484c4;
+}
