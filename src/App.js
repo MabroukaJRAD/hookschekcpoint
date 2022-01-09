@@ -2,8 +2,12 @@ import './App.css';
 import { useState } from 'react';
 import MovieList from './Component/MovieList';
 import AddMovie from './Component/AddMovie';
-import Filter from './Component/Filter';
-
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import Details from './Component/Details';
 
 function App() {
   const [movie, setMovie] = useState([{
@@ -167,14 +171,15 @@ function App() {
     },])
     let addNewMovie=(newMovie)=>{setMovie([...movie,newMovie])}
   return (
-    <div className="App">
-      <header className="App-header">
-       <AddMovie myMovie={addNewMovie}/>
-      </header>
-      <div>
-        <MovieList movie={movie}/>
-      </div>
-    </div>
+
+    <BrowserRouter>
+      
+    <Routes>
+      <Route path="/addMovie" element={<AddMovie myMovie={addNewMovie}/>}/>
+      <Route path="/" element={<MovieList movie={movie}/>}/>
+      <Route path="/detail/:ID" element={<Details movies={movie}/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
